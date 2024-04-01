@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_description">Movie Description\nLorem Ipsum</string>
+    <string name="content_description_poster">Movie Poster</string>
+</resources>
