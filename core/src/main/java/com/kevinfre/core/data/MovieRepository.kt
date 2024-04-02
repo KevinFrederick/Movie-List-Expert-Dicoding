@@ -1,5 +1,6 @@
 package com.kevinfre.core.data
 
+import android.util.Log
 import com.kevinfre.core.data.source.local.LocalDataSource
 import com.kevinfre.core.data.source.remote.RemoteDataSource
 import com.kevinfre.core.data.source.remote.network.ApiResponse
@@ -37,7 +38,7 @@ class MovieRepository @Inject constructor(
             }
 
             override fun shouldFetch(data: List<Movie>?): Boolean {
-                return true
+                return data.isNullOrEmpty()
             }
         }.asFlow()
 
@@ -51,6 +52,7 @@ class MovieRepository @Inject constructor(
         val movieEntity = DataMapper.mapDomainToEntity(movie)
         appExecutors.diskIO().execute {
             localDataSource.setFavoriteMovie(movieEntity, state)
+            Log.v("Repo", movieEntity.toString())
         }
     }
 }
