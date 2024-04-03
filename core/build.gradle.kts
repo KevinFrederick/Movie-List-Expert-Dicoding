@@ -63,4 +63,9 @@ dependencies {
     implementation ("androidx.sqlite:sqlite-ktx:2.4.0")
 
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.13")
+
+    testImplementation ("org.mockito:mockito-core:5.6.0")
+    testImplementation ("org.mockito:mockito-inline:5.2.0")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 }
