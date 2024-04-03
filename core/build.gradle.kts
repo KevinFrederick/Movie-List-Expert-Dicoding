@@ -22,7 +22,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -54,4 +61,6 @@ dependencies {
 
     implementation ("net.zetetic:android-database-sqlcipher:4.5.3")
     implementation ("androidx.sqlite:sqlite-ktx:2.4.0")
+
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.13")
 }
